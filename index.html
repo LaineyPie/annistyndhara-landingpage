@@ -7,56 +7,62 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
 
-  body {
+  html, body {
     margin: 0;
-    background-color: #0a1128; /* dark navy blue */
+    padding: 0;
+    height: 100%;
+    background-color: #0a1128; /* dark navy blue behind the GIF */
     font-family: 'Cinzel', serif;
     color: #a6b1e1;
+    overflow: hidden; /* prevent scrollbars */
+  }
+
+  .background-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    z-index: -1; /* behind all content */
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
   }
 
-  .container {
-    position: relative;
-    width: 900px; /* width for 16:9 ratio with 900x506 */
-    height: 506px; /* height for 16:9 */
-  }
-
-  .background {
+  .background-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* cover the container maintaining aspect ratio */
-    display: block;
+    object-fit: contain; /* fit entire gif, keep 16:9 ratio */
   }
 
   .overlay {
-    position: absolute;
-    top: 10px;
+    position: fixed;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 200px; /* smaller than container */
+    width: 200px;
     height: auto;
     pointer-events: none;
     user-select: none;
-    z-index: 5;
+    z-index: 10;
   }
 
   .links {
-    position: absolute;
+    position: fixed;
     bottom: 20px;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
     font-size: 1.1rem;
-    margin: 0 20px;
     z-index: 10;
   }
 
   .links a {
     margin: 0 12px;
     text-decoration: none;
-    color: #d0d6f9; /* Soft lavender-blue */
+    color: #d0d6f9;
     display: inline-block;
     animation: float 3s ease-in-out infinite;
     transition: color 0.3s ease;
@@ -90,17 +96,19 @@
 </style>
 </head>
 <body>
-  <div class="container">
-    <img src="annistyndharalandingpage.gif" alt="Landing page background" class="background" />
-    <img src="name-overlay.png" alt="Annistyn Dhara" class="overlay" />
-    <div class="links">
-      <a href="mailto:hello@annistyndhara.com">
-        <span class="icon">💌</span>Mail
-      </a>
-      <a href="https://beacons.ai/annistyndhara" target="_blank" rel="noopener noreferrer">
-        <span class="icon">✨</span>Socials
-      </a>
-    </div>
+  <div class="background-container">
+    <img src="annistyndharalandingpage.gif" alt="Background GIF" />
+  </div>
+
+  <img src="name-overlay.png" alt="Annistyn Dhara" class="overlay" />
+
+  <div class="links">
+    <a href="mailto:hello@annistyndhara.com">
+      <span class="icon">💌</span>Mail
+    </a>
+    <a href="https://beacons.ai/annistyndhara" target="_blank" rel="noopener noreferrer">
+      <span class="icon">✨</span>Socials
+    </a>
   </div>
 </body>
 </html>
