@@ -3,52 +3,88 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Annistyn Dhara</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet" />
+<title>Annistyn Dhara Landing Page</title>
 <style>
-  body, html {
-    margin: 0; padding: 0;
-    height: 100%;
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+  body {
+    margin: 0;
     background-color: #0a1128; /* dark navy blue */
     font-family: 'Cinzel', serif;
-    color: #d0d6f9;
+    color: #a6b1e1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
   }
+
   .container {
     position: relative;
-    max-width: 600px;
-    margin: 0 auto;
+    width: 1000px; /* fixed width matching GIF */
+    height: 1000px; /* fixed height matching GIF */
   }
+
   .background {
-    width: 100%;
-    height: auto;
+    width: 1000px;
+    height: 1000px;
     display: block;
   }
+
   .overlay {
     position: absolute;
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 150px;
+    width: 200px; /* smaller than GIF */
     height: auto;
     pointer-events: none;
     user-select: none;
+    z-index: 5;
   }
-  .bottom-links {
+
+  .links {
     position: absolute;
     bottom: 20px;
     width: 100%;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    background: rgba(10, 17, 40, 0.6);
+    padding: 5px 0;
+    border-radius: 8px;
+    margin: 0 20px;
+    z-index: 10;
   }
-  .bottom-links a {
-    color: #a6b1e1;
-    text-decoration: none;
+
+  .links a {
     margin: 0 12px;
-    font-weight: 500;
+    text-decoration: none;
+    color: #d0d6f9; /* Soft lavender-blue */
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+    transition: color 0.3s ease;
   }
-  .bottom-links a:hover {
-    color: #e6e6fa;
+
+  .links a:hover {
+    color: #ffffff;
   }
+
+  .links a:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .links a:nth-child(2) {
+    animation-delay: 1.5s;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
   .icon {
     margin-right: 6px;
     vertical-align: middle;
@@ -57,14 +93,14 @@
 </head>
 <body>
   <div class="container">
-    <img src="annistyndharalandingpage.gif" alt="Landing Page" class="background" />
+    <img src="annistyndharalandingpage.gif" alt="Landing page background" class="background" />
     <img src="name-overlay.png" alt="Annistyn Dhara" class="overlay" />
-    <div class="bottom-links">
+    <div class="links">
       <a href="mailto:hello@annistyndhara.com">
-        <span class="icon">❤️📧</span>hello@annistyndhara.com
+        <span class="icon">💌</span>Mail
       </a>
       <a href="https://beacons.ai/annistyndhara" target="_blank" rel="noopener noreferrer">
-        <span class="icon">✨</span>beacons.ai/annistyndhara
+        <span class="icon">✨</span>Socials
       </a>
     </div>
   </div>
