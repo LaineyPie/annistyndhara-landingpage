@@ -1,26 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Welcome</title>
-  <style>
-    body, html {
-      height: 100%;
-      margin: 0;
-      background: black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Annistyn Dhara</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet" />
+<style>
+  body, html {
+    margin: 0; padding: 0;
+    height: 100%;
+    background-color: #0a1128; /* dark navy blue */
+    font-family: 'Cinzel', serif;
+    color: #d0d6f9;
+  }
+  .container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .background {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .overlay {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+  }
+  .bottom-links {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+  }
+  .bottom-links a {
+    color: #a6b1e1;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: 500;
+  }
+  .bottom-links a:hover {
+    color: #e6e6fa;
+  }
+  .icon {
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+</style>
 </head>
 <body>
-  <img src="annistyndharalandingpage.gif" alt="Landing GIF" />
+  <div class="container">
+    <img src="annistyndharalandingpage.gif" alt="Landing Page" class="background" />
+    <img src="name-overlay.png" alt="Annistyn Dhara" class="overlay" />
+    <div class="bottom-links">
+      <a href="mailto:hello@annistyndhara.com">
+        <span class="icon">❤️📧</span>hello@annistyndhara.com
+      </a>
+      <a href="https://beacons.ai/annistyndhara" target="_blank" rel="noopener noreferrer">
+        <span class="icon">✨</span>beacons.ai/annistyndhara
+      </a>
+    </div>
+  </div>
 </body>
 </html>
