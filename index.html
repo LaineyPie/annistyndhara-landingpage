@@ -20,13 +20,14 @@
 
   .container {
     position: relative;
-    width: 1000px; /* fixed width matching GIF */
-    height: 1000px; /* fixed height matching GIF */
+    width: 900px; /* width for 16:9 ratio with 900x506 */
+    height: 506px; /* height for 16:9 */
   }
 
   .background {
-    width: 1000px;
-    height: 1000px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* cover the container maintaining aspect ratio */
     display: block;
   }
 
@@ -35,7 +36,7 @@
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 200px; /* smaller than GIF */
+    width: 200px; /* smaller than container */
     height: auto;
     pointer-events: none;
     user-select: none;
@@ -48,9 +49,6 @@
     width: 100%;
     text-align: center;
     font-size: 1.1rem;
-    background: rgba(10, 17, 40, 0.6);
-    padding: 5px 0;
-    border-radius: 8px;
     margin: 0 20px;
     z-index: 10;
   }
