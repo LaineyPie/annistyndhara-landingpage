@@ -7,36 +7,22 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
 
-  html, body {
+  /* Full viewport height and width with no margin */
+  body, html {
     margin: 0;
-    padding: 0;
     height: 100%;
-    background-color: #0a1128; /* dark navy blue behind the GIF */
-    font-family: 'Cinzel', serif;
-    color: #a6b1e1;
-    overflow: hidden; /* prevent scrollbars */
-  }
-
-  .background-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 100vw;
-    height: 100vh;
-    transform: translate(-50%, -50%);
-    overflow: hidden;
-    z-index: -1; /* behind all content */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .background-container img {
     width: 100%;
-    height: 100%;
-    object-fit: contain; /* fit entire gif, keep 16:9 ratio */
+    font-family: 'Cinzel', serif;
+    overflow: hidden;
   }
 
+  /* Fullscreen GIF background */
+  body {
+    background: url('annistyndharalandingpage.gif') no-repeat center center fixed;
+    background-size: cover; /* cover whole viewport */
+  }
+
+  /* Name overlay */
   .overlay {
     position: fixed;
     top: 20px;
@@ -49,29 +35,32 @@
     z-index: 10;
   }
 
+  /* Links container fixed bottom center */
   .links {
     position: fixed;
     bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
     text-align: center;
     font-size: 1.1rem;
     z-index: 10;
   }
 
+  /* Link styles with float animation */
   .links a {
     margin: 0 12px;
     text-decoration: none;
-    color: #d0d6f9;
+    color: #d0d6f9; /* soft lavender-blue */
     display: inline-block;
     animation: float 3s ease-in-out infinite;
     transition: color 0.3s ease;
+    font-weight: 500;
   }
 
   .links a:hover {
     color: #ffffff;
   }
 
+  /* Offset animation delay for each link */
   .links a:nth-child(1) {
     animation-delay: 0s;
   }
@@ -80,6 +69,7 @@
     animation-delay: 1.5s;
   }
 
+  /* Floating animation keyframes */
   @keyframes float {
     0%, 100% {
       transform: translateY(0px);
@@ -89,16 +79,15 @@
     }
   }
 
+  /* Icon spacing */
   .icon {
     margin-right: 6px;
     vertical-align: middle;
   }
+
 </style>
 </head>
 <body>
-  <div class="background-container">
-    <img src="annistyndharalandingpage.gif" alt="Background GIF" />
-  </div>
 
   <img src="name-overlay.png" alt="Annistyn Dhara" class="overlay" />
 
@@ -110,5 +99,6 @@
       <span class="icon">✨</span>Socials
     </a>
   </div>
+
 </body>
 </html>
